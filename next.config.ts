@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  /* output: "export", */ // Comment this out or delete it
   images: {
     unoptimized: true,
   },
