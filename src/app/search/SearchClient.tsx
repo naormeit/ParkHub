@@ -14,9 +14,10 @@ type BookingValidation = {
 
 function formatCurrency(amount: number, currency: string) {
   try {
-    return new Intl.NumberFormat(undefined, {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency,
+      currency: currency.toUpperCase(),
+      currencyDisplay: "narrowSymbol",
       maximumFractionDigits: 2,
     }).format(amount);
   } catch {

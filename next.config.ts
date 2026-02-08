@@ -1,11 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* output: "export", */ // Comment this out or delete it
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.google.com",
+        port: "",
+        pathname: "/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        port: "",
+        pathname: "/wikipedia/**",
+      },
+    ],
   },
-  reactCompiler: true,
+  reactCompiler: false,
 };
 
 export default nextConfig;
